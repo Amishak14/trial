@@ -1,4 +1,4 @@
-export default (state, action) => {
+const name = (state, action) => {
   switch(action.type) {
     case 'GET_TRANSACTIONS':
       return {
@@ -25,3 +25,4 @@ export default (state, action) => {
       return state;
   }
 }
+export default name

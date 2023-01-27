@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: expense-tracker
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: expense-tracker
+  template: 
+    metadata: 
+      name: frontend-pod
+      labels: 
+        app: expense-tracker
+    spec:
+      containers:
+       - name: frontend-pod
+         image: amishark/expense-tracker-frontend:c3
+         ports:
+          - containerPort: 3000
+         env:
+            - name: MONGO_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: password
+            - name: MONGO_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: username
+            - name: config-map
+              valueFrom:
+                configMapKeyRef:
+                   name: my-configmap
+                   key: MONGO_URI
+
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      serviceAccountName: my-serviceaccount
+      serviceAccount: my-serviceaccount 
+      securityContext: {}
+      schedulerName: default-scheduler
