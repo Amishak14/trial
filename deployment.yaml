@@ -36,11 +36,3 @@ spec:
                 configMapKeyRef:
                    name: my-configmap
                    key: MONGO_URI
-
-      restartPolicy: Always
-      terminationGracePeriodSeconds: 30
-      dnsPolicy: ClusterFirst
-      serviceAccountName: my-serviceaccount
-      serviceAccount: my-serviceaccount 
-      securityContext: {}
-      schedulerName: default-scheduler
