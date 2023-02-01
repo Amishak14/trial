@@ -15,7 +15,11 @@ const transactions = require('./routes/transactions');
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+const options = {
+  origin: process.env.BASE_URL,
+ optionsSuccessStatus: 200
+}
+app.use(cors(options));
 
 if(process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
