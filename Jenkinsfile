@@ -8,7 +8,7 @@ retriever: modernSCM(
 
  
 
-appName = "expense-tracker"
+appName = "amisha-backend-buildconfig"
 
  
 
