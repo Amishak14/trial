@@ -25,7 +25,7 @@ spec:
           - containerPort: 3000
          env:
             - name: REACT_APP_API_BASE_URL
-              value: http://backend-route-amisha-poc.edge-dev-410-915b3b336cabec458a7c7ec2aa7c625f-0000.us-south.containers.appdomain.cloud
+              value: http://backend-route-amisha-jenkins.edge-dev-410-915b3b336cabec458a7c7ec2aa7c625f-0000.us-south.containers.appdomain.cloud
 
 ---
 #frontend-service
