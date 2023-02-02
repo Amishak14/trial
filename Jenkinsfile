@@ -15,11 +15,11 @@ appName = "amisha-backend-buildconfig"
 pipeline {
     agent any
     stages {
-        stage("Checkout") {
-            steps {
-                checkout scm
-            }
-        }
+//         stage("Checkout") {
+//             steps {
+//                 checkout scm
+//             }
+//         }
 
         stage("Docker build backend"){
             steps {
