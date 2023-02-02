@@ -47,7 +47,7 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: frontend-route
-  namespace: amisha-poc
+  namespace: amisha-jenkins
   labels:
     app: expense-tracker
 spec:
