@@ -18,7 +18,7 @@ spec:
      spec: 
        containers:
         - name: backend-pod 
-          image: docker.io/amishark/app-backend-ubi:v1
+          image: image-registry.openshift-image-registry.svc:5000/amisha-jenkins/expense-tracker-backend:latest
           ports:
            - containerPort: 5000
           env: 
