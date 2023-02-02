@@ -46,7 +46,7 @@ pipeline {
             script {
                 openshift.withCluster() {
                     openshift.withProject("$PROJECT_NAME") {
-                         sh 'sh -x $WORKSPACE client/frontend-deployment.sh'
+                         sh 'sh -x $WORKSPACE/client/frontend-deployment.sh'
                     }
                 }
             }
