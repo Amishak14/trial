@@ -54,7 +54,7 @@ spec:
       port: 5000
       selector:
         app: expense-tracker
---
+---
 #backend-route
 kind: Route
 apiVersion: route.openshift.io/v1
