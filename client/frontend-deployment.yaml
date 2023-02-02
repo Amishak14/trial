@@ -19,7 +19,8 @@ spec:
     spec:
       containers:
        - name: frontend-pod
-         image: amishark/expense-tracker-frontend:aa
+         image: image-registry.openshift-image-registry.svc:5000/amisha-jenkins/expense-tracker-frontend
+
          ports:
           - containerPort: 3000
          env:
