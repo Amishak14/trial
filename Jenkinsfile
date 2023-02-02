@@ -48,7 +48,7 @@ pipeline {
                         echo "Using project: ${openshift.project()}"
                          sh 'sh -x $WORKSPACE/backend-deployment.sh'
                     }
-                }
+                 }
             }
         } 
     }
