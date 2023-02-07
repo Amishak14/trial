@@ -37,10 +37,10 @@ pipeline {
        steps{
     tagImage([
             sourceImagePath: "amisha-jenkins",
-            sourceImageName: "expense-tracker-backend",
+            sourceImageName: "my-app",
             sourceImageTag : "latest",
             toImagePath: "amisha-jenkins",
-            toImageName    : "expense-tracker-backend",
+            toImageName    : "my-app",
             toImageTag     : "${env.BUILD_NUMBER}"
 
     ])
