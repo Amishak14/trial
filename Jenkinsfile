@@ -46,17 +46,17 @@ pipeline {
     ])
        }
        }
-//       stage("deploy backend") {
-//         steps {
-//             script {
-//                 openshift.withCluster() {
-//                     openshift.withProject("$PROJECT_NAME") {
-//                         echo "Using project: ${openshift.project()}"
-//                          sh 'sh -x $WORKSPACE/backend-deployment.sh'
-//                     }
-//                  }
-//             }
-//         } 
-//     }  
+      stage("deploy backend") {
+        steps {
+            script {
+                openshift.withCluster() {
+                    openshift.withProject("$PROJECT_NAME") {
+                        echo "Using project: ${openshift.project()}"
+                         sh 'sh -x $WORKSPACE/backend-deployment.sh'
+                    }
+                 }
+            }
+        } 
+    }  
    }   
 }   
