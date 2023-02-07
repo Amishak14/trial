@@ -8,7 +8,7 @@ retriever: modernSCM(
 
  
 
-appName = "amisha-backend-buildconfig"
+//appName = "amisha-backend-buildconfig"
 
  
 
