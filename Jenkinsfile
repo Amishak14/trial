@@ -26,7 +26,7 @@ pipeline {
               script{
                 openshift.withCluster(){
                   openshift.withProject("$PROJECT_NAME"){
-                    openshit.selector("bc","my-app-buildconfig").startBuild("--wait")
+                    openshift.selector("bc","my-app-buildconfig").startBuild("--wait")
                   }
                 }
               }
