@@ -34,7 +34,7 @@ pipeline {
             }
         }
 
-       stage("Tag image") {
+       stage("Tag backend image") {
        steps{
     tagImage([
             sourceImagePath: "amisha-jenkins",
@@ -61,7 +61,7 @@ pipeline {
             }
         }
       
-      stage("Tag image") {
+      stage("Tag frontend image") {
        steps{
     tagImage([
             sourceImagePath: "amisha-jenkins",
