@@ -93,7 +93,7 @@ spec:
     spec:
       containers:
        - name: frontend-pod
-         image: image-registry.openshift-image-registry.svc:3000/amisha-jenkins/expense-tracker-frontend:latest
+         image: image-registry.openshift-image-registry.svc:5000/amisha-jenkins/expense-tracker-frontend:latest
          ports:
           - containerPort: 3000
          env:
