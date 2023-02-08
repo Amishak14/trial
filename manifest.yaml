@@ -56,6 +56,22 @@ spec:
         app: expense-tracker
 
 ---
+#backend-route
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: backend-route
+  namespace: amisha-jenkins
+  labels:
+    app: expense-tracker
+spec:
+  to:
+    kind: Service
+    name: backend-service
+  port:
+    targetPort: 5000
+    
+---   
 #frontend deployment
 
 apiVersion: apps/v1
@@ -97,5 +113,19 @@ spec:
       port: 3000
       Selector: 
         app: expense-tracker
-
+---
+#frontend-route
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: frontend-route
+  namespace: amisha-jenkins
+  labels:
+    app: expense-tracker
+spec:
+  to:
+    kind: Service
+    name: frontend-service
+  port:
+    targetPort: 3000
 
