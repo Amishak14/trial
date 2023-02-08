@@ -8,7 +8,8 @@ retriever: modernSCM(
 
  
 
-//appName = "amisha-backend-buildconfig"
+// appName1 = "amisha-expense-tracker-backend-buildconfig"
+// appName2= "amisha-expense-tracker-frontend-buildconfig"
 
  
 
@@ -26,7 +27,7 @@ pipeline {
               script{
                 openshift.withCluster(){
                   openshift.withProject("$PROJECT_NAME"){
-                    openshift.selector("bc","my-app-buildconfig").startBuild("--wait")
+                    openshift.selector("bc","amisha-expense-tracker-backend-buildconfig").startBuild("--wait")
                   }
                 }
               }
@@ -37,10 +38,10 @@ pipeline {
        steps{
     tagImage([
             sourceImagePath: "amisha-jenkins",
-            sourceImageName: "my-app",
+            sourceImageName: "expense-tracker-backend",
             sourceImageTag : "latest",
             toImagePath: "amisha-jenkins",
-            toImageName    : "my-app",
+            toImageName    : "expense-tracker-backend",
             toImageTag     : "${env.BUILD_NUMBER}"
 
     ])
