@@ -47,7 +47,22 @@ pipeline {
     ])
        }
        }
-      stage("deploy backend") {
+      
+      
+      stage("Docker build frontend"){
+            steps {
+              script{
+                openshift.withCluster(){
+                  openshift.withProject("$PROJECT_NAME"){
+                    openshift.selector("bc","amisha-expense-tracker-frontend-buildconfig").startBuild("--wait")
+                  }
+                }
+              }
+            }
+        }
+      
+      
+      stage("deploy the application") {
         steps {
             script {
                 openshift.withCluster() {
