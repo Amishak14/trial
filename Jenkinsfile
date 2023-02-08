@@ -61,6 +61,19 @@ pipeline {
             }
         }
       
+      stage("Tag image") {
+       steps{
+    tagImage([
+            sourceImagePath: "amisha-jenkins",
+            sourceImageName: "expense-tracker-frontend",
+            sourceImageTag : "latest",
+            toImagePath: "amisha-jenkins",
+            toImageName    : "expense-tracker-frontend",
+            toImageTag     : "${env.BUILD_NUMBER}"
+
+    ])
+       }
+       }
       
       stage("deploy the application") {
         steps {
